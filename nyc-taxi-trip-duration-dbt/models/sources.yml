@@ -1,0 +1,61 @@
+# dbt_project/sources.yml
+
+version: 2
+
+sources:
+  - name: nyc_taxi_trip_duration
+    database: dogwood-cinema-393905
+    schema: nyc_taxi_trip_duration
+    tables:
+      - name: testing_trips
+        identifier: test
+        columns:
+          - name: id
+            description: 'Unique identifier for records.'
+            tests:
+              - unique
+          - name: vendor_id
+            description: 'Vendor identifier.'
+          - name: pickup_datetime
+            description: 'Date and time of pickup.'
+          - name: dropoff_datetime
+            description: 'Date and time of drop-off.'
+          - name: passenger_count
+            description: 'Number of passengers.'
+          - name: pickup_longitude
+            description: 'Longitude of pickup location.'
+          - name: pickup_latitude
+            description: 'Latitude of pickup location.'
+          - name: dropoff_longitude
+            description: 'Longitude of drop-off location.'
+          - name: dropoff_latitude
+            description: 'Latitude of drop-off location.'
+          - name: store_and_fwd_flag
+            description: 'Flag indicating if the trip was stored and forwarded.'
+      - name: training_trips
+        identifier: train
+        columns:
+          - name: id
+            description: 'Unique identifier for records.'
+            tests:
+              - unique
+          - name: vendor_id
+            description: 'Vendor identifier.'
+          - name: pickup_datetime
+            description: 'Date and time of pickup.'
+          - name: dropoff_datetime
+            description: 'Date and time of drop-off.'
+          - name: passenger_count
+            description: 'Number of passengers.'
+          - name: pickup_longitude
+            description: 'Longitude of pickup location.'
+          - name: pickup_latitude
+            description: 'Latitude of pickup location.'
+          - name: dropoff_longitude
+            description: 'Longitude of drop-off location.'
+          - name: dropoff_latitude
+            description: 'Latitude of drop-off location.'
+          - name: store_and_fwd_flag
+            description: 'Flag indicating if the trip was stored and forwarded.'
+          - name: trip_duration
+            description: 'Duration of the trip in seconds.'

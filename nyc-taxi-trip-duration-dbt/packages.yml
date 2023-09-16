@@ -1,0 +1,3 @@
+packages:
+  - git: "https://github.com/kristeligt-dagblad/dbt_ml.git"
+    revision: "v0.6.0"

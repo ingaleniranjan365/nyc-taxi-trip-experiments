@@ -40,17 +40,29 @@ seeds:
 #    tests:
 #      - unique_id # Configuring models
 
+vars:
+  "dbt_ml:audit_schema": "audit"
+  "dbt_ml:audit_table": "ml_models"
+on-run-start:
+  - '{% do adapter.create_schema(api.Relation.create(target.project, "audit")) %}'
+  - "{{ dbt_ml.create_model_audit_table() }}"
 
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
-#models:
-#  +persist_docs:
-#    relation: true
-#    columns: true
-#  +labels:
-#    owner: "Niranjan Ingale"
-#    env: "{{ target.name }}"
-#    status: experimental
-#    interval: daily
+models:
+  +persist_docs:
+    relation: true
+    columns: true
+  +labels:
+    owner: "ingaleniranjan365"
+    env: "{{ target.name }}"
+    status: experimental
+    interval: daily
+  dbt_ml:
+    ml:
+      enabled: true
+      schema: ml
+      materialized: model
+      post-hook: "{{ dbt_ml.model_audit() }}"
 #  kaggle:
 #    nyc_taxi_trip_duration:
 #      +tags:

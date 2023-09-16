@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: trip_duration_prediction
+    columns:
+      - name: id
+        tests:
+          - not_null
+      - name: trip_duration
+        tests:
+          - not_null
