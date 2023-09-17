@@ -1,3 +1,6 @@
 nyc-taxi-trip-duration-dbt/seeds/nyc-taxi-trip-duration/
-
-/nyc-taxi-trip-duration-dbt/target/
+nyc-taxi-trip-duration-dbt/logs/
+nyc-taxi-trip-duration-dbt/target/
+nyc-taxi-trip-duration-pyspark/nyc-taxi-trip-duration/
+nyc-taxi-trip-duration-pyspark/predictions/
+nyc-taxi-trip-duration-pyspark/poetry.lock
