@@ -13,26 +13,26 @@ def get_spark_session(app_name: str) -> SparkSession:
         .getOrCreate()
 
 
-spark = get_spark_session("nyc-taxi-tri-duration")
-train_df = spark.read.csv("nyc-taxi-trip-duration/train.csv", header=True, inferSchema=True)
-test_df = spark.read.csv("nyc-taxi-trip-duration/test.csv", header=True, inferSchema=True)
+if __name__ == '__main__':
+    spark = get_spark_session("nyc-taxi-tri-duration")
+    train_df = spark.read.csv("nyc-taxi-trip-duration/train.csv", header=True, inferSchema=True)
+    test_df = spark.read.csv("nyc-taxi-trip-duration/test.csv", header=True, inferSchema=True)
 
-feature_cols = ["pickup_longitude", "pickup_latitude", "dropoff_longitude", "passenger_count"]
-vector_assembler = VectorAssembler(inputCols=feature_cols, outputCol="features")
+    feature_cols = ["pickup_longitude", "pickup_latitude", "dropoff_longitude", "passenger_count"]
+    vector_assembler = VectorAssembler(inputCols=feature_cols, outputCol="features")
 
-lr = LinearRegression(featuresCol="features", labelCol="trip_duration")
+    lr = LinearRegression(featuresCol="features", labelCol="trip_duration")
 
-pipeline = Pipeline(stages=[vector_assembler, lr])
+    pipeline = Pipeline(stages=[vector_assembler, lr])
 
-model = pipeline.fit(train_df)
+    model = pipeline.fit(train_df)
 
-predictions = model.transform(test_df)
+    predictions = model.transform(test_df)
 
-submissions_df = predictions.select("id", "prediction")\
-                            .withColumn("trip_duration", predictions["prediction"].cast("int"))\
-                            .select("id", "trip_duration")
+    submissions_df = predictions.select("id", "prediction") \
+        .withColumn("trip_duration", predictions["prediction"].cast("int")) \
+        .select("id", "trip_duration")
 
+    submissions_df.repartition(1).write.csv("predictions", header=True)
 
-submissions_df.repartition(1).write.csv("predictions", header=True)
-
-spark.stop()
+    spark.stop()
