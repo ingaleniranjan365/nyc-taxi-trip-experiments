@@ -4,4 +4,8 @@ nyc-taxi-trip-duration-dbt/target/
 nyc-taxi-trip-duration-pyspark/nyc-taxi-trip-duration/
 nyc-taxi-trip-duration-pyspark/predictions/
 nyc-taxi-trip-duration-pyspark/poetry.lock
-nyc-taxi-trip-duration-pyspark/terraform-dataproc-cluster/gcp_keys/
+nyc-taxi-trip-duration-pyspark/terraform/gcp_keys/
+nyc-taxi-trip-duration-pyspark/terraform/.terraform.lock.hcl
+nyc-taxi-trip-duration-pyspark/terraform/terraform.tfstate
+nyc-taxi-trip-duration-pyspark/terraform/terraform.tfstate.backup
+nyc-taxi-trip-duration-pyspark/terraform/.terraform/
