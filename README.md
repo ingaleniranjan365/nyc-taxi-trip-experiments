@@ -9,4 +9,9 @@ These experiments are meant to demonstrate solving common use cases that come up
 3. Visualisations: Visualising  NYC taxi trips on a map, creating charts for comparing cab traffic at airports and market share of services such as Uber & Lyft.
 
 
+
+![alt text]([https://github.com/ingaleniranjan365/nyc-taxi-trip-experiments/blob/main/media/50k%20pickups.png](https://github.com/ingaleniranjan365/nyc-taxi-trip-experiments/blob/main/media/nyc_50k_pickups_dropoffs_vid.mp4)?raw=true)
+
 ![alt text](https://github.com/ingaleniranjan365/nyc-taxi-trip-experiments/blob/main/media/50k%20pickups.png?raw=true)
+
+
