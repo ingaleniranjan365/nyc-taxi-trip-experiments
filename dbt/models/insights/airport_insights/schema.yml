@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: aggregated_pickup_insights_by_hod
+    database: dogwood-cinema-393905
+    schema: nyc_tlc_raw_taxi_trips
+    columns:
+      - name: hour_of_day
+        tests:
+          - unique
+          - not_null
+      - name: airport
+        tests:
+          - not_null
+      - name: trip_count
+        tests:
+          - not_null
+  - name: airport_trips
+    database: dogwood-cinema-393905
+    schema: nyc_tlc_raw_taxi_trips
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+      - name: impression_datetime
+        tests:
+          - not_null
+      - name: source
+        tests:
+          - not_null
+      - name: airport
+        tests:
+          - not_null
+  - name: trips
+    database: dogwood-cinema-393905
+    schema: nyc_tlc_raw_taxi_trips
+    columns:
+      - name: pickup_datetime
+        description: The pickup datetime of the taxi trip.
+        tests:
+          - unique
+          - not_null
+
+      - name: dropoff_datetime
+        description: The dropoff datetime of the taxi trip.
+        tests:
+          - unique
+          - not_null
+
+      - name: PULocationID
+        description: The pickup location ID.
+        tests:
+          - not_null
+
+      - name: DOLocationID
+        description: The dropoff location ID.
+        tests:
+          - not_null
+
+      - name: source
+        description: The source of the taxi trip (ride_hailing, green, or yellow).
+        tests:
+          - unique
+          - not_null

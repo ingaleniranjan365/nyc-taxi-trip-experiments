@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: nyc_tlc_raw_taxi_trips
+    database: dogwood-cinema-393905
+    schema: nyc_tlc_raw_taxi_trips
+    tables:
+      - name: taxi_zones_lookup_table
+        identifier: taxi_zones_lookup_table
+        columns:
+          - name: LocationID
+            tests:
+              - unique
+              - not_null
+          - name: Borough
+            tests:
+              - not_null
+          - name: Zone
+            tests:
+              - not_null
+          - name: service_zone
+            tests:
+              - not_null
+      - name: green_taxi_trips
+        identifier: green_taxi_trips
+      - name: ride_hailing_services_taxi_trips
+        identifier: ride_hailing_services_taxi_trips
+      - name: yellow_taxi_trips
+        identifier: yellow_taxi_trips
