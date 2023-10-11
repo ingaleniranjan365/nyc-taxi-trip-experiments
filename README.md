@@ -10,7 +10,8 @@ These experiments are meant to demonstrate solving common use cases that come up
 
 
 
-![alt text]([https://github.com/ingaleniranjan365/nyc-taxi-trip-experiments/blob/main/media/50k%20pickups.png](https://github.com/ingaleniranjan365/nyc-taxi-trip-experiments/blob/main/media/nyc_50k_pickups_dropoffs_vid.mp4)?raw=true)
+![alt text](https://github.com/ingaleniranjan365/nyc-taxi-trip-experiments/blob/main/media/nyc%2050k%20pickups%20dropoffs%20vid.mp4?raw=true)
+
 
 ![alt text](https://github.com/ingaleniranjan365/nyc-taxi-trip-experiments/blob/main/media/50k%20pickups.png?raw=true)
 
