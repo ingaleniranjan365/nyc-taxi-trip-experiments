@@ -45,6 +45,24 @@ def collect_and_convert_to_numpy(df, service):
     return service_array
 
 
+def plot_stacked_area_chart(lyft_array, uber_array):
+    days = np.arange(1, 31)
+    plt.figure(figsize=(12, 6))
+
+    total_array = np.minimum(lyft_array + uber_array, 100)
+
+    plt.fill_between(days, lyft_array, label='Lyft', color='pink', alpha=0.7)
+    plt.fill_between(days, lyft_array, total_array, label='Uber', color='blue', alpha=0.7)
+
+    plt.title('Market Share of Ride Hailing Services over the month of June 2023 in NYC (Daily Granularity)')
+    plt.xlabel('Day of the Month')
+    plt.ylabel('Market Share (%)')
+    plt.ylim(0, 100)
+    plt.legend(loc='upper left')
+    plt.tight_layout()
+    plt.show()
+
+
 def plot_stacked_bar_chart(lyft_array, uber_array):
     days = np.arange(1, 31)
     plt.figure(figsize=(12, 6))
@@ -91,8 +109,9 @@ def main():
     uber_array = collect_and_convert_to_numpy(joined_df, "Uber")
     lyft_array = collect_and_convert_to_numpy(joined_df, "Lyft")
 
-    plot_stacked_bar_chart(lyft_array, uber_array)
-    plot_radar_chart(lyft_array, uber_array)
+    # plot_stacked_bar_chart(lyft_array, uber_array)
+    # plot_radar_chart(lyft_array, uber_array)
+    plot_stacked_area_chart(lyft_array, uber_array)
 
     spark.stop()
 
