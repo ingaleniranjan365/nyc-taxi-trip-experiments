@@ -8,4 +8,5 @@ These experiments are meant to demonstrate solving common use cases that come up
 2. Taxi trip duration prediction: Solutions for doing real time and batch predictions for taxi trips.
 3. Visualisations: Visualising  NYC taxi trips on a map, creating charts for comparing cab traffic at airports and market share of services such as Uber & Lyft.
 
-![50k NYC Taxi Trip Pickups and Dropoffs](media/50k_pickups.png)
+
+![alt text](https://github.com/ingaleniranjan365/nyc-taxi-trip-experiments/blob/main/media/50k%20pickups.png?raw=true)
