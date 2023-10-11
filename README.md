@@ -11,9 +11,11 @@ These experiments are meant to demonstrate solving common use cases that come up
 
 ### Here are some cool visualisations of the insights derived from the experiments:
 
+
 #### Visualising 50k taxi pickups and dropoffs in NYC
 
 ![alt text](https://github.com/ingaleniranjan365/nyc-taxi-trip-experiments/blob/main/media/NYC50kPickupsDropoffsGif.gif?raw=true)
+
 
 
 #### Market share comparison between Uber and Lyft for June 2023
@@ -21,9 +23,11 @@ These experiments are meant to demonstrate solving common use cases that come up
 ![alt text](https://github.com/ingaleniranjan365/nyc-taxi-trip-experiments/blob/main/media/MarketShareComparisonOfUberAndLyft.png?raw=true)
 
 
+
 #### Taxi cab traffic at JFK & LaGuardia airports for June 2023
 
 ![alt text](https://github.com/ingaleniranjan365/nyc-taxi-trip-experiments/blob/main/media/TripCountComparisonBetweenJFKandLaGuardiaAirportsForJune2023.png?raw=true)
+
 
 
 #### DBT DAG for predicting taxi trip duration
